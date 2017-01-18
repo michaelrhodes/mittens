@@ -12,7 +12,7 @@ npm install mittens
 
 ### Usage
 
-mittens mixes into an object or function
+mittens mixes into any object or function
 
 ```js
 var mittens = require('mittens')
