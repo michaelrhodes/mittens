@@ -27,6 +27,7 @@ function emit () {
 }
 
 function off (name, fn, i) {
+  if (!name) return this.µ = void 0
   this.µ = this.µ || {}
   var ls = this.µ[name]
   if (!ls || !ls.length) return
