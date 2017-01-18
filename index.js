@@ -26,18 +26,18 @@ function emit () {
   if (d) clean(ls)
 }
 
-function on (name, fn) {
-  this.µ = this.µ || {}
-  var ls = this.µ[name] = this.µ[name] || []
-  if (!~ls.indexOf(fn)) ls[ls.length] = fn
-}
-
 function off (name, fn, i) {
   this.µ = this.µ || {}
   var ls = this.µ[name]
   if (!ls || !ls.length) return
   if (fn && ~(i = ls.indexOf(fn))) ls[i] = null
   if (!fn) this.µ[name] = []
+}
+
+function on (name, fn) {
+  this.µ = this.µ || {}
+  var ls = this.µ[name] = this.µ[name] || []
+  if (!~ls.indexOf(fn)) ls[ls.length] = fn
 }
 
 function clean (ls, i) {
