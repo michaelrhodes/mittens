@@ -7,7 +7,7 @@ var EE = require('events')
 var mittens = require('./')
 
 function test (obj) {
-  var i = 1, j = 100
+  var i = 10, j = 1000
   while (i--) obj.on('event', function () {})
   while (j--) obj.emit('event', j)
 }
