@@ -1,6 +1,10 @@
 var test = require('tape')
 var mittens = require('./')
 
+// note: these tests were shamelessly stolen from
+// https://github.com/scottcorgan/tiny-emitter/
+// MIT, bitch 💁🏻
+
 test('subscribes to an event', function (t) {
   var emitter = mittens({})
   emitter.on('test', function () {})
