@@ -36,9 +36,8 @@ function off (name, fn, i) {
   this.µ = this.µ || {}
   var ls = this.µ[name]
   if (!ls || !ls.length) return
+  if (fn && ~(i = ls.indexOf(fn))) ls[i] = null
   if (!fn) this.µ[name] = []
-  if (!~(i = ls.indexOf(fn))) return
-  ls[i] = null
 }
 
 function clean (ls, i) {
