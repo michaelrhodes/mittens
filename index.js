@@ -10,8 +10,7 @@ function mittens (o) {
 
 function emit () {
   this.µ = this.µ || {}
-  var a = arguments, ls = this.µ[a[0]]
-  if (!ls || !ls.length) return
+  var a = arguments, ls = this.µ[a[0]] || []
   var fn, d = 0, al = a.length
   var i = 0, l = ls.length
   for (; i < l; i++) {
@@ -31,8 +30,7 @@ function off () {
   var i, name = a[0], fn = a[1]
   if (!name) return this.µ = void 0
   this.µ = this.µ || {}
-  var ls = this.µ[name]
-  if (!ls || !ls.length) return
+  var ls = this.µ[name] || []
   if (fn && ~(i = ls.indexOf(fn))) ls[i] = null
   if (al === 1) this.µ[name] = []
 }
@@ -49,7 +47,6 @@ function clean (ls, i) {
 }
 
 function slice (ai, o) {
-  if (!ai) return
   var a = [], l = ai.length
   for (o = o || 0; o < l; o++) a[o] = ai[o]
   return a
