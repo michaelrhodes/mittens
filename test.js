@@ -160,3 +160,15 @@ test('emitting event that has not been subscribed to yet', function (t) {
   emitter.emit('some-event', 'some message')
   t.end()
 })
+
+test('calling off with an undefined function does nothing', function (t) {
+  var emitter = mittens.call({})
+  var obj = { fn: function () {}, fn2: function () {}, fn3: void 0 }
+  emitter.on('test', obj.fn)
+  emitter.on('test', obj.fn2)
+  emitter.off('test', obj.fn3)
+  t.equal(emitter.µ.test.length, 2, 'nothing was removed')
+  emitter.off('test')
+  t.equal(emitter.µ.test.length, 0, 'everything was removed')
+  t.end()
+})
