@@ -21,6 +21,7 @@ function emit () {
   }
   if (d) clean(ls)
 }
+
 function off () {
   var a = arguments
   var i, name = a[0], fn = a[1]
