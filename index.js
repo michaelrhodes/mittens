@@ -42,8 +42,8 @@ function clean (ls, i) {
 }
 
 function slice (ai, o) {
-  var a = [], i = 0, l = ai.length
-  for (o = o || 0; i < l; i++)
-    a[i] = ai[i + o]
+  o = o || 0
+  var a = [], i = 0, l = ai.length - o
+  for (; i < l; i++) a[i] = ai[i + o]
   return a
 }
