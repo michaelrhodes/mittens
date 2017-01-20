@@ -39,13 +39,16 @@ while (j--) obj.emit('event', j)
 ```
 
 ```sh
-#1 [9.19 kB] eventemitter3 x 5,556 ops/sec ±0.87% (83 runs sampled)
-#2 [8.82 kB] events x 4,980 ops/sec ±0.95% (85 runs sampled)
-#3 [1.62 kB] mittens x 3,602 ops/sec ±0.85% (85 runs sampled)
-#4 [3.60 kB] emitter-component x 239 ops/sec ±1.18% (80 runs sampled)
-#5 [2.15 kB] tiny-emitter x 232 ops/sec ±1.23% (78 runs sampled)
-#6 [3.77 kB] component-emitter x 208 ops/sec ±1.24% (76 runs sampled)
+[3.42 kB] eventemitter3 x 5,706 ops/s
+[4.02 kB] events x 4,717 ops/s
+[1.08 kB] mittens x 4,211 ops/s
+[0.73 kB] mitt x 1,136 ops/s
+[1.05 kB] tiny-emitter x 233 ops/s
+[1.68 kB] emitter-component x 226 ops/s
+[1.68 kB] component-emitter x 208 ops/s
 ```
+
+<small>Note: Bundle sizes calculated via `browserify {module-entry} | uglifyjs -cm | wc -c`</small>
 
 ### License
 [MIT](http://opensource.org/licenses/MIT)

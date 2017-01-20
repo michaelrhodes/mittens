@@ -1,6 +1,7 @@
 var benchmark = require('benchmark')
 var ec = require('emitter-component')
 var ce = require('component-emitter')
+var mitt = require('mitt')
 var Tiny = require('tiny-emitter')
 var EE3 = require('eventemitter3')
 var EE = require('events')
@@ -17,6 +18,9 @@ benchmark.Suite()
     var obj = {}
     mittens.call(obj)
     test(obj)
+  })
+  .add('mitt', function () {
+    test(mitt())
   })
   .add('emitter-component', function () {
     var obj = {}
