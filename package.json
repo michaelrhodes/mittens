@@ -1,6 +1,6 @@
 {
   "name": "mittens",
-  "version": "1.0.7",
+  "version": "1.0.8",
   "description": "a really small, really fast event emitter for all browsers",
   "main": "index.js",
   "scripts": {
