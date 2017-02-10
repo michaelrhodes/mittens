@@ -1,7 +1,7 @@
 {
   "name": "mittens",
   "version": "1.0.7",
-  "description": "a really small, really fast event emitter for browsers",
+  "description": "a really small, really fast event emitter for all browsers",
   "main": "index.js",
   "scripts": {
     "benchmark": "node bench.js",
@@ -23,7 +23,8 @@
     "emit",
     "browser",
     "micro",
-    "fast"
+    "fast",
+    "ie8"
   ],
   "author": "Michael Rhodes",
   "license": "MIT",

@@ -28,17 +28,17 @@ function off () {
   var i, name = a[0], fn = a[1]
   if (!name) return o.µ = {}
   var ls = o.µ[name] || []
-  if (fn && ~(i = ls.indexOf(fn))) ls[i] = null
+  if (fn && ~(i = ndx(ls, fn))) ls[i] = null
   if (a.length === 1) o.µ[name] = []
 }
 
 function on (name, fn) {
   var ls = this.µ[name] = this.µ[name] || []
-  if (fn && !~ls.indexOf(fn)) ls[ls.length] = fn
+  if (fn && !~ndx(ls, fn)) ls[ls.length] = fn
 }
 
 function clean (ls, i) {
-  while (~(i = ls.indexOf(null)))
+  while (~(i = ndx(ls, null)))
     ls.splice(i, 1)
 }
 
@@ -47,4 +47,10 @@ function slice (ai, o) {
   var a = [], i = 0, l = ai.length - o
   for (; i < l; i++) a[i] = ai[i + o]
   return a
+}
+
+function ndx (ai, x) {
+  var i = 0, l = ai.length
+  for (; i < l; i++) if (ai[i] === x) return i
+  return -1
 }

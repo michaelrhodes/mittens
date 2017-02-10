@@ -1,6 +1,6 @@
 # mittens
 
-mittens is a really small, really fast event emitter for browsers
+mittens is a really small, really fast event emitter for all browsers
 
 [![Build status](https://travis-ci.org/michaelrhodes/mittens.svg?branch=master)](https://travis-ci.org/michaelrhodes/mittens)
 
@@ -55,7 +55,7 @@ while (j--) obj.emit('event', j)
 ```sh
 [3.42 kB] eventemitter3 x 5,632 ops/s
 [4.02 kB] events x 4,961 ops/s
-[1.08 kB] mittens x 4,337 ops/s
+[1.11 kB] mittens x 4,337 ops/s
 [0.73 kB] mitt x 1,175 ops/s
 [1.68 kB] emitter-component x 234 ops/s
 [1.05 kB] tiny-emitter x 233 ops/s
