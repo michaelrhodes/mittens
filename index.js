@@ -10,25 +10,26 @@ function mittens (o) {
 }
 
 function emit () {
-  var a = arguments, ls = this.µ[a[0]] || []
-  var fn, d = 0, al = a.length
+  var o = this, a = arguments
+  var fn, ls = o.µ[a[0]] || []
+  var d = 0, al = a.length
   var i = 0, l = ls.length
   for (; i < l; i++) {
     (fn = ls[i]) ?
-      al == 2 ? fn.call(this, a[1]) :
-      fn.apply(this, slice(a, 1)) :
+      al == 2 ? fn.call(o, a[1]) :
+      fn.apply(o, slice(a, 1)) :
     d++
   }
   if (d) clean(ls)
 }
 
 function off () {
-  var a = arguments
+  var o = this, a = arguments
   var i, name = a[0], fn = a[1]
-  if (!name) return this.µ = {}
-  var ls = this.µ[name] || []
+  if (!name) return o.µ = {}
+  var ls = o.µ[name] || []
   if (fn && ~(i = ls.indexOf(fn))) ls[i] = null
-  if (a.length === 1) this.µ[name] = []
+  if (a.length === 1) o.µ[name] = []
 }
 
 function on (name, fn) {
