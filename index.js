@@ -25,7 +25,7 @@ function emit () {
 function off () {
   var a = arguments
   var i, name = a[0], fn = a[1]
-  if (!name) return this.µ = void 0
+  if (!name) return this.µ = {}
   var ls = this.µ[name] || []
   if (fn && ~(i = ls.indexOf(fn))) ls[i] = null
   if (a.length === 1) this.µ[name] = []
