@@ -25,9 +25,9 @@ function emit () {
 
 function off () {
   var o = this, a = arguments
-  var i, name = a[0], fn = a[1]
+  var name = a[0], fn = a[1]
   if (!name) return o.µ = {}
-  var ls = o.µ[name] || []
+  var i, ls = o.µ[name] || []
   if (fn && ~(i = ndx(ls, fn))) ls[i] = null
   if (a.length === 1) o.µ[name] = []
 }
