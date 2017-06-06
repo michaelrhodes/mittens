@@ -5,12 +5,12 @@ function mittens (o) {
   o.emit = emit
   o.off = off
   o.on = on
-  o.µ = {}
   return o
 }
 
 function emit () {
   var o = this, a = arguments
+  o.µ = o.µ || {}
   var fn, ls = o.µ[a[0]] || []
   var d = 0, al = a.length
   var i = 0, l = ls.length
@@ -25,15 +25,18 @@ function emit () {
 
 function off () {
   var o = this, a = arguments
-  var name = a[0], fn = a[1]
+  var i, name = a[0], fn = a[1]
+  o.µ = o.µ || {}
   if (!name) return o.µ = {}
-  var i, ls = o.µ[name] || []
+  var ls = o.µ[name] || []
   if (fn && ~(i = ndx(ls, fn))) ls[i] = null
   if (a.length === 1) o.µ[name] = []
 }
 
 function on (name, fn) {
-  var ls = this.µ[name] = this.µ[name] || []
+  var o = this
+  o.µ = o.µ || {}
+  var ls = o.µ[name] = o.µ[name] || []
   if (fn && !~ndx(ls, fn)) ls[ls.length] = fn
 }
 
