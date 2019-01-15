@@ -1,8 +1,19 @@
 {
   "name": "mittens",
-  "version": "1.0.9",
-  "description": "a really small, really fast event emitter for all browsers",
+  "author": "Michael Rhodes",
+  "version": "1.1.0",
   "main": "index.js",
+  "repository": "github:michaelrhodes/mittens",
+  "keyword": [
+    "event",
+    "emitter",
+    "emit",
+    "browser",
+    "micro",
+    "fast",
+    "ie8"
+  ],
+  "license": "MIT",
   "scripts": {
     "benchmark": "node bench.js",
     "test": "tape test.js"
@@ -16,24 +27,5 @@
     "mitt": "~1.0.0",
     "tape": "~4.6.3",
     "tiny-emitter": "~1.1.0"
-  },
-  "keywords": [
-    "event",
-    "emitter",
-    "emit",
-    "browser",
-    "micro",
-    "fast",
-    "ie8"
-  ],
-  "author": "Michael Rhodes",
-  "license": "MIT",
-  "homepage": "https://github.com/michaelrhodes/mittens",
-  "repository": {
-    "type": "git",
-    "url": "https://github.com/michaelrhodes/mittens"
-  },
-  "bugs": {
-    "url": "https://github.com/michaelrhodes/mittens/issues"
   }
 }
