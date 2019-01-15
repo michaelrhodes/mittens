@@ -11,16 +11,19 @@ function mittens (o) {
 function emit () {
   var o = this, a = arguments
   o.µ = o.µ || {}
-  var fn, ls = o.µ[a[0]] || []
+  var n = a[0]
+  var fn, ls = o.µ[n] || []
   var d = 0, al = a.length
   var i = 0, l = ls.length
-  for (; i < l; i++) {
-    (fn = ls[i]) ?
-      al == 2 ? fn.call(o, a[1]) :
-      fn.apply(o, slice(a, 1)) :
+  var as = al > 2 && slice(a, 1)
+  for (; i < l; i++) (fn = ls[i]) ?
+    as ? fn.apply(o, as) :
+    fn.call(o, a[1]) :
     d++
-  }
-  if (d) clean(ls)
+  if (n !== '*' && o.µ['*']) as ?
+    emit.apply(o, ['*', n].concat(as)) :
+    emit.call(o, '*', n, a[1])
+  if (l && d) clean(ls)
 }
 
 function off () {

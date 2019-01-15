@@ -172,3 +172,16 @@ test('calling off with an undefined function does nothing', function (t) {
   t.equal(emitter.µ.test.length, 0, 'everything was removed')
   t.end()
 })
+
+test('emits wildcard event', function (t) {
+  var emitter = mittens({})
+
+  emitter.on('*', function (name, first) {
+    t.ok(true, 'triggered wildcard event')
+    t.equal(name, 'test', 'passed event name as first argument')
+    t.equal(first, 1, 'passed first event argument as second argument')
+    t.end()
+  })
+
+  emitter.emit('test', 1)
+})
